@@ -5,11 +5,24 @@ public class BankAccount {
     private String email;
     private String phone;
 
-
+    public BankAccount(){
+        this("1234",900.0,"Eylem","myemail@email.com","555 555 55 55");
+        System.out.println("Emp ty constructor called");
+    }
+    public BankAccount(String accountNumber,double accountBalance,String customerName,String email,String phone){
+        System.out.println("Acoount constructor with parameters called");
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phone = phone;
+    }
     public void depositFunds(double depositAmount){
       accountBalance += depositAmount;
         System.out.println("Deposit of $" + depositAmount + "made. New balance is $"+ accountBalance);
     }
+
+
 
     public void withdrawFunds(double withdrawalAmount){
         if(accountBalance - withdrawalAmount < 0){
